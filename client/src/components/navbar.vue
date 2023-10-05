@@ -1,4 +1,8 @@
 <script setup lang="ts">
+import { ref } from 'vue';
+import { RouterLink } from 'vue-router';
+
+const isActive = ref(false);
 
 </script>
 
@@ -11,7 +15,7 @@
         <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="28" />
     </a>
 
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+    <a role="button" class="navbar-burger" :class="{'is-active': isActive}" @click="isActive = !isActive" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
@@ -63,5 +67,10 @@
 </template>
 
 <style scoped>
+
+.router-link-active {
+    font-weight: bold;
+    border-bottom: 2px solid #00d1b2;
+}
 
 </style>
