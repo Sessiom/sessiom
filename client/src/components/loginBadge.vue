@@ -1,16 +1,34 @@
 <script setup lang="ts">
-const user = {
-firstName: 'John',
-lastName: 'Doe',
-email: 'john@doe.com',
+  import { getSession, login } from '@/model/sessions'
 
-}
+  const session = getSession()
+
+
 </script>
 
 <template>
-    <div class="has-text-right"> v-if="user">
-    welcome, {{ user.firstName }} {{ user.lastName }}<br>
-    
-
-    </div>
+  <div class="has-text-right" v-if="session.user">
+    Welcome, {{ session.user.firstName }} {{ session.user.lastName }} <br>
+    <small>
+      {{ session.user.email }}
+      <a class="button is-small is-light is-warning" @click.prevent="session.user = null">
+        <span class="icon">
+          <i class="fas fa-sign-out-alt"></i>
+        </span>
+      </a>
+    </small>
+  </div>
+  <div class="buttons" v-else>
+    <a class="button is-primary">
+      <strong>Sign up</strong>
+    </a>
+    <a class="button is-light" @click.prevent="login">
+      Log in
+    </a>
+  </div>
 </template>
+
+
+<style scoped>
+
+</style>
