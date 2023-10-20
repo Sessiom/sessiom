@@ -1,6 +1,7 @@
 /* B"H
 */
 import { reactive } from "vue";
+import { type user, getuserbyemail } from "./users";
 
 const session = reactive({
   user: null as User | null,
@@ -19,7 +20,8 @@ export function getSession(){
   return session;
 }
 
-export function login(){
+export function login(email: string, password: string) user : undefined{
+    const user = getuserbyemail(email);
   session.user = {
     firstName: "Test",
     lastName: "User",

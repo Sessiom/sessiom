@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>dropDownMenu</title>
+</head>
+<body>
+  <nav>
+  <ul>
+     <li>
+      <a class="category"><b>File</b></a>
+        <ul class="dropdown">
+          <li><a href="#">New</a></li> 
+          <li><a href="#">Open</a></li>
+          <li><a href="#">Save</a></li>
+          <li><a href="#">Print</a></li>
+          <li><a href="#">Close</a></li>
+        </ul>
+      </li>
+
+     <li>
+       <a class="category">Edit</a>
+       <ul class="dropdown">
+        <li><a href="#">Undo</a></li>
+        <li><a href="#">Redo</a></li>
+        <li><a href="#">Cut</a></li>
+        <li><a href="#">Copy</a></li>
+        <li><a href="#">Paste</a></li>
+        <li><a href="#">Delete</a></li>
+        <li><a href="#">Select All</a></li>
+       </ul>
+       </li>
+
+     <li>
+      <a class="category"><b>View</b></a>
+      <ul class="dropdown">
+        <li><a href="#">Zoom In</a></li>
+        <li><a href="#">Zoom Out</a></li>
+        <li><a href="#">Actual Size</a></li>
+        <li><a href="#">Fit Page</a></li>
+        <li><a href="#">Fit Width</a></li>
+        <li><a href="#">Fit Height</a></li>
+        <li><a href="#">Rotate Left</a></li>
+        <li><a href="#">Rotate Right</a></li>
+        <li><a href="#">Full Screen</a></li>
+      </ul>
+    </li>
+  </ul>
+  </nav>
+</body>
+</html>
+
+<style>
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+  }
+
+body{
+  background-color: lightcyan;
+  }
+
+ul {
+  list-style: none;
+  background: rgb(16, 146, 16);
+  }
+
+ul li {
+  display: inline-block;
+  width: 120px; 
+  position: relative;
+  }
+
+ul li a {
+  display: block;
+  padding:  5px 15px; 
+  text-decoration: none;
+  }
+
+ul li a.category{
+  color: black;
+  font-size: 18px;
+  }
+
+ul li ul.dropdown {
+  background: rgb(50, 192, 50);
+  position: absolute;
+  display: none;
+  } 
+
+ul li:hover ul.dropdown {
+  display: block;
+  }
+
+ul li ul a:hover {
+  background: #72e78c;
+  }
+
+ul li:hover a.category {
+  background:rgb(50, 192, 50);
+  }
+   
+</style>
